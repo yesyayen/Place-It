@@ -2,7 +2,7 @@ from wnck import Window
 import gtk
 import time
 
-class PIWindow:
+class PIWindow():
     """Cotroller to abstract out window functions"""
 
     _gravity = 5
@@ -21,3 +21,14 @@ class PIWindow:
 
     def resize(self, xPos, yPos, length, height):
         self._window.set_geometry(PIWindow._gravity, PIWindow._resizeMask, xPos, yPos, length, height)
+
+    def maximize(self):
+        if not self._window.is_maximized():        
+            self._window.maximize()
+
+    def unmaximize(self):
+        if self._window.is_maximized():
+            self._window.unmaximize()
+
+    def get_window(self):
+        return self._window
