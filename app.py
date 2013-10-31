@@ -13,4 +13,5 @@ if __name__ == '__main__':
     #window.maximize()
     #print type(window.get_window().get_workspace())
 
-    print dir(wnck.Screen)
+    manager.get_usable_size()
+    #print dir(wnck.Screen)
